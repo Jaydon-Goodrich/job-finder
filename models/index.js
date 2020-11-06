@@ -14,7 +14,9 @@ User.belongsToMany(Job, {
 
 Job.belongsToMany(User, {
     through: Favorite,
-    as: 'saved_jobs'
+    as: 'saved_jobs',
+    foreignKey: 'job_id'
+
 });
 
 Favorite.belongsTo(User, {
