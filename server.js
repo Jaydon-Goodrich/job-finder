@@ -8,6 +8,7 @@ app.get('/', (req, res) => {
     res.send("Hello Job Finder!")
 })
 
+
 app.listen(PORT, () => {
     console.log(`Now listening on http://localhost:${PORT}`);
 })
