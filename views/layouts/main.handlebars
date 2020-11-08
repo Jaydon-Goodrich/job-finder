@@ -32,8 +32,11 @@
             <nav>
                 <ul class="nav">
                     <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
-                    <li><a class="nav-link active" href="/login">Login</a></li>
+                    {{#if loggedIn}}
                     <li><button class="nav-link active" id="logout-link">Logout</button></li>
+                    {{else}}
+                    <li><a class="nav-link active" href="/login">Login</a></li>
+                    {{/if}}
                 </ul>
             </nav>
         </div>
