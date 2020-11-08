@@ -5,6 +5,7 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3001;
 const exphbs = require('express-handlebars');
+const routes = require('./controllers');
 const session = require('express-session');
 const hbs = exphbs.create();
 
