@@ -24,14 +24,13 @@ Job.init(
             validate: {
                 isUrl: true
             }
-        },
-        date
+        }
     },
     {
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'post'
+        modelName: 'job'
     }
 );
 
