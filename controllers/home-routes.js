@@ -7,8 +7,7 @@ router.get('/', (req, res) => {
 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
-        console.log("Logged IN!!!");
-        res.redirect('/');
+        res.redirect('/jobs');
         return;
     }
     res.render('login');
