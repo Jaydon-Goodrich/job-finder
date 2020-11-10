@@ -26,9 +26,15 @@ header {
     height: max-content;
 }
 
+label {
+    position: fixed;
+    visibility: hidden;
+}
+
 #page-title {
     color: var(--primary);
     text-shadow: 0px 0px 4px var(--dark);
+    font-size: 45px;
 }
 #slogan {
     position: absolute;
@@ -67,6 +73,30 @@ a:hover, #logout-link:hover {
 
 .homepage-header {
     text-align: center;
+}
+
+.login-form, .signup-form {
+    color: var(--tertiary);
+}
+
+input, .login-form button, .signup-form button {
+    padding: 0 2px;
+    border-radius: 5px;
+    margin: 2px;
+}
+
+.login-form button, .signup-form button {
+    background-color: var(--primary);
+    color: var(--text);
+    border-color: var(--tertiary);
+    border-style: outset;
+    border-width: 3px;
+}
+.login-form button:hover, .signup-form button:hover {
+    background-color: var(--secondary);
+    border-color: var(--primary);
+    border-style: inset;
+    transition: all .5s;
 }
 
 @media only screen and (min-width: 500px) {
