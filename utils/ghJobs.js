@@ -1,13 +1,14 @@
-const fetch = require("node-fetch");
+const fetch = require('node-fetch');
 
-function gitJobs(langauge, location) {
-    fetch(`https://jobs.github.com/positions.json?description=${langauge}&location=${location}`)
+function gitJobs(location, jobType) {
+
+    fetch(`https://jobs.github.com/positions.json?description=${jobType}&location=${location}`)
     .then(response => response.json())
     .then(data => {
         console.log(data);
     })
+
 }
 
-
-//There is nothing on github jobs for Utah or any city in Utah
-gitJobs('javaScript', 'San Francisco');
+//There are no jobs in Utah so hopefully people want to relocate
+gitJobs('San Francisco', 'JavaScript');
