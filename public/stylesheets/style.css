@@ -24,6 +24,9 @@ header {
     background-size: contain;
     min-height: 80px;
     height: max-content;
+    padding-bottom: 5px;
+    border-bottom: 3px solid var(--tertiary);
+    box-shadow: 0px 0px 8px 3px var(--tertiary);
 }
 
 label {
@@ -33,9 +36,15 @@ label {
 
 #page-title {
     color: var(--primary);
-    text-shadow: 0px 0px 4px var(--dark);
-    font-size: 45px;
+    font-weight: 600;
+    -webkit-text-stroke: 1px var(--text);
+    font-size: 80px;
 }
+
+.nav li {
+    font-size: 26px;
+}
+
 #slogan {
     position: absolute;
     visibility: hidden;
@@ -57,14 +66,14 @@ label {
     border: none;
 }
 
-a, #logout-link {
+nav a, #logout-link {
     color: var(--text);
     border-radius: 5px;
     padding:2px;
     margin: 0px auto 15px auto;
 }
 
-a:hover, #logout-link:hover {
+nav a:hover, #logout-link:hover {
     text-decoration: none;
     color: var(--tertiary);
     border: inset 2px var(--text);
@@ -72,7 +81,31 @@ a:hover, #logout-link:hover {
 }
 
 .homepage-header {
+    width: 70%;
     text-align: center;
+    background-color: var(--tertiary);
+    color: var(--text);
+    border-radius: 5px;
+    box-shadow: 4px 4px 4px 1px var(--dark);
+}
+
+.homepage-header div {
+    background-color: var(--text);
+    width: 90%;
+    text-align: left;
+    padding: 0 6px;
+    border-radius: 5px;
+    color: var(--tertiary);
+    border: inset var(--primary) 3px;
+}
+
+.homepage-header a {
+    color: var(--secondary);
+}
+
+.homepage-header a:hover {
+    color: var(--primary);
+    text-decoration: underline;
 }
 
 .login-form, .signup-form {
@@ -99,7 +132,7 @@ input, .login-form button, .signup-form button {
     transition: all .5s;
 }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 700px) {
     #slogan {
         visibility: visible;
     }
