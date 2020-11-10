@@ -54,3 +54,7 @@ a:hover, #logout-link:hover {
 #slogan {
     color: var(--text);
 }
+
+.homepage-header {
+    text-align: center;
+}

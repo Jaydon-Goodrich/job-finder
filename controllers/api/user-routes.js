@@ -65,7 +65,7 @@ router.post('/', (req, res) => {
     })
 })
 
-router.post('/login', withAuth, (req, res) => {
+router.post('/login', (req, res) => {
     User.findOne({
         where: {
             email: req.body.email
@@ -80,17 +80,27 @@ router.post('/login', withAuth, (req, res) => {
 
         if(!passwordResult) {
             res.status(400).json({message: 'wrong password'})
-            return
+            return;
         }
-
         req.session.save(() => {
             req.session.user_id = dbUserData.id;
             req.session.username = dbUserData.username;
             req.session.loggedIn = true;
             res.json({user: dbUserData, message: "Login successful"})
-            return
+            return;
         })
     })
 })
+
+router.post('/logout', (req, res) => {
+    if(req.session.loggedIn){
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    }
+    else{
+        res.status(404).end();
+    }
+});
 
 module.exports = router;
