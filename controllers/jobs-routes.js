@@ -1,7 +1,11 @@
 const router = require('express').Router();
+const getJobs = require('../utils/scraper');
 
 router.get('/', (req, res) => {
-    res.render('jobs');
+    //res.render('loading')
+    getJobs("Utah", "Job")
+    .then(response => res.render('jobs', {data: response, loggedIn: req.session.loggedIn}));
+    
     
 });
 
