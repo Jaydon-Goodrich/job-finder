@@ -145,6 +145,9 @@ input, .login-form button, .signup-form button {
     height: 120px;
     animation: spin 2s linear infinite;
 }
+.city-text {
+    font-size: 8px;
+}
   
 @keyframes spin {
     0% { transform: rotate(0deg); }
