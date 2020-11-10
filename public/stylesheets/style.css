@@ -4,6 +4,7 @@
     --tertiary: #8C4A3E;
     --text: #84D39F;
     --background: #C9D2D4;
+    --dark: #0F0706;
 }
 
 * {
@@ -16,12 +17,24 @@ body {
 }
 
 header {
-    background-color: var(--primary);
+    background-color: var(--secondary);
+    background-image: url("/images/crown.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    min-height: 80px;
+    height: max-content;
 }
 
 #page-title {
-    color: var(--secondary);
-    text-shadow: 0px 0px 4px var(--tertiary);
+    color: var(--primary);
+    text-shadow: 0px 0px 4px var(--dark);
+}
+#slogan {
+    position: absolute;
+    visibility: hidden;
+    color: var(--text);
+    text-shadow: 0px 0px 4px var(--dark);
 }
 
 .header-row {
@@ -41,20 +54,23 @@ header {
 a, #logout-link {
     color: var(--text);
     border-radius: 5px;
-    border: outset 2px var(--tertiary);
+    padding:2px;
     margin: 0px auto 15px auto;
 }
 
 a:hover, #logout-link:hover {
+    text-decoration: none;
     color: var(--tertiary);
     border: inset 2px var(--text);
     transition: all .2s;
 }
 
-#slogan {
-    color: var(--text);
-}
-
 .homepage-header {
     text-align: center;
+}
+
+@media only screen and (min-width: 500px) {
+    #slogan {
+        visibility: visible;
+    }
 }
