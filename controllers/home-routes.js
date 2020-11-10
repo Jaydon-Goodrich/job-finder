@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
-        res.redirect('/jobs');
+        res.redirect('/jobs', {loggedIn: req.session.loggedIn});
         return;
     }
     res.render('login');

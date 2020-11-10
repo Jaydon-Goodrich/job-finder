@@ -1,2 +1,9 @@
 {{!-- Page for placing all the jobs pulled form linked in --}}
 <h2>Jobs page!</h2>
+{{#each data}}
+<div>
+    <h2>{{this.title}}</h2>
+    <a href="{{this.link}}" target="_blank">Click Here to Apply</a>
+</div>
+
+{{/each}}
