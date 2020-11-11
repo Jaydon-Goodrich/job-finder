@@ -27,6 +27,7 @@ header {
     padding-bottom: 5px;
     border-bottom: 3px solid var(--tertiary);
     box-shadow: 0px 0px 8px 3px var(--tertiary);
+    text-shadow: 2px 2px 1px var(--dark);
 }
 
 label {
@@ -49,7 +50,6 @@ label {
     position: absolute;
     visibility: hidden;
     color: var(--text);
-    text-shadow: 0px 0px 4px var(--dark);
 }
 
 .header-row {
@@ -77,6 +77,7 @@ nav a:hover, #logout-link:hover {
     text-decoration: none;
     color: var(--tertiary);
     border: inset 2px var(--text);
+    text-shadow: none;
     transition: all .2s;
 }
 
@@ -163,6 +164,13 @@ input, .login-form button, .signup-form button {
    box-shadow: 4px 4px 4px 1px var(--secondary);
 }
 
+
+.loading {
+    text-shadow: 2px 2px 1px var(--dark);
+    box-shadow: 4px 4px 4px 1px var(--dark);
+    color: var(--text);
+}
+  
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
