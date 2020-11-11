@@ -64,6 +64,7 @@ label {
 #logout-link {
     background-color: rgba(0,0,0,0);
     border: none;
+    text-shadow: 2px 2px 1px var(--dark);
 }
 
 nav a, #logout-link {
@@ -149,11 +150,30 @@ input, .login-form button, .signup-form button {
 .city-text {
     font-size: 8px;
 }
+.con-card {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 15px;
+
+}
+.job-card {
+   width: 18%;
+   min-width: 200px;
+   height: 300px;
+   border: 1px solid black;
+   padding: 5px;
+   margin: 5px;
+   box-shadow: 4px 4px 4px 1px var(--secondary);
+}
+
 
 .loading {
     text-shadow: 2px 2px 1px var(--dark);
-    box-shadow: 4px 4px 4px 1px var(--dark);
     color: var(--text);
+}
+
+.search-box {
+    margin: 15px;
 }
   
 @keyframes spin {

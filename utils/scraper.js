@@ -71,7 +71,7 @@ async function getJobs(location, jobType) {
             query: jobType,
             options: {
                 //We can change the limit to how ever many we need
-                limit: 5,
+                limit: 10,
                 locations: [location],
                 descriptionFn: descriptionFn,
                 filters: {
