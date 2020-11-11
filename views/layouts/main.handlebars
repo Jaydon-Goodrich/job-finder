@@ -14,28 +14,24 @@
 <body>
     <header>
         <div class="container">
-            <div class="row pt-1 header-row">
-                <img id="page-logo" src="/images/crown.svg" alt="crown-logo">
-            </div>
             <div class="row mx-auto header-row">
                 <div class="col">
                     <h1 id="page-title" class="text-center">Job Finder</h1>
                 </div>
             </div>
             <div class="row mx-auto header-row">
-                <div class="col">
-                    <p id="slogan" class="text-center">Search, Apply, Work</p>
-                </div>
+
             </div>
         </div>
         <div class="mx-auto">
             <nav>
                 <ul class="nav">
-                    <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li id="slogan">Search, Apply, Work</li>
                     {{#if loggedIn}}
-                    <li><button class="nav-link active" id="logout-link">Logout</button></li>
+                    <li><button id="logout-link">Logout</button></li>
                     {{else}}
-                    <li><a class="nav-link active" href="/login">Login</a></li>
+                    <li><a href="/login">Login</a></li>
                     {{/if}}
                 </ul>
             </nav>

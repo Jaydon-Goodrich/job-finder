@@ -81,10 +81,14 @@ async function getJobs(location, jobType) {
             }
         })
     ]);
-    printJobs(jobsArray);
+    //printJobs(jobsArray);
     // Close browser
     await scraper.close();
+
+    return jobsArray;
 };
 
 //Call the function and pass location and jobType
-getJobs("Utah", "Engineer");
+
+
+module.exports = getJobs;

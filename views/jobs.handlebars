@@ -1,0 +1,25 @@
+{{!-- Page for placing all the jobs pulled form linked in --}}
+<div class="card-group">
+
+{{#each data}}
+<div class="card" style="width: 18rem;">
+    <h4 class="card-title">{{this.title}}</h2>
+    <h6 class="card-subtitle mb-2">{{this.company}}<span class="text-muted city-text">   {{this.place}}</span></h6>
+
+    <a href="{{this.link}}" target="_blank" class="card-link">Click Here to Apply</a>
+</div>
+
+{{/each}}
+
+</div>
+
+
+{{!-- <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div> --}}
