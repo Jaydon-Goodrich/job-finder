@@ -148,7 +148,21 @@ input, .login-form button, .signup-form button {
 .city-text {
     font-size: 8px;
 }
-  
+.con-card {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 15px;
+
+}
+.job-card {
+   width: 18%;
+   height: 300px;
+   border: 1px solid black;
+   padding: 5px;
+   margin: 5px;
+   box-shadow: 4px 4px 4px 1px var(--secondary);
+}
+
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
