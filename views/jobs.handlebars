@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-{{!-- Page for placing all the jobs pulled form linked in --}}
 
 <div class="con-card">
     {{#each data}}
@@ -11,59 +9,4 @@
             <a href="{{this.link}}" target="_blank" class="card-link">Click Here to Apply</a>
     </div>
     {{/each}}
- </div>
-=======
-<div class="container">
-
-  <div class="col-3">
-    Saved Jobs
-  </div>
-
-  <div class="col-9">
-
-    <div class="row">
-      <div class="col-md-4 offset-md-4">
-        <div class="search-container">
-          <form action="">
-            <input type="text" placeholder="Search for a Job" name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-8">Job Title</div>
-      <div class="col-4">Post Date</div>
-    </div>
-
-    <div class="row">
-      <div class="col">Search Results</div>
-    </div>
-  </div>
-  {{!-- Page for placing all the jobs pulled form linked in --}}
-  <div class="card-group">
-
-    {{#each data}}
-    <div class="card" style="width: 18rem;">
-      <h4 class="card-title">{{this.title}}</h2>
-        <h6 class="card-subtitle mb-2">{{this.company}}<span class="text-muted city-text"> {{this.place}}</span></h6>
-
-        <a href="{{this.link}}" target="_blank" class="card-link">Click Here to Apply</a>
-    </div>
-
-    {{/each}}
-
-  </div>
->>>>>>> b52d16746f6773911983ef20c0fc5f48a8c8a6fc
-
-
-  {{!-- <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div> --}}
+</div>
