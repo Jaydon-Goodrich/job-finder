@@ -169,8 +169,11 @@ input, .login-form button, .signup-form button {
 
 .loading {
     text-shadow: 2px 2px 1px var(--dark);
-    box-shadow: 4px 4px 4px 1px var(--dark);
     color: var(--text);
+}
+
+.search-box {
+    margin: 15px;
 }
   
 @keyframes spin {
