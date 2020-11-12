@@ -32,7 +32,7 @@ router.get('/:id', (req, res) => {
             {
                 model: Job,
                 attributes: ['id', 'job_name', 'job_url'],
-                as: 'saved_jobs'
+                as: 'JobViews'
             }
         ]
     })
