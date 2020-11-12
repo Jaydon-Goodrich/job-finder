@@ -1,30 +1,21 @@
 const User = require('./User');
 const Job = require('./Job')
-const Favorite = require('./Favorites')
+const PageView = require('./PageViews')
 
-User.hasMany(Favorite, {
-    foreignKey: "user_id"
-});
+User.hasMany(PageView)
+
+Job.hasMany(PageView)
 
 User.belongsToMany(Job, {
-    through: Favorite,
-    as: 'saved_jobs',
-    foreignKey: 'user_id',
-});
+    through: PageView,
+    as: "JobViews",
+    foreignKey: 'user_id'
+})
 
 Job.belongsToMany(User, {
-    through: Favorite,
-    as: 'saved_jobs',
+    through: PageView,
+    as: "UserViews",
     foreignKey: 'job_id'
+})
 
-});
-
-Favorite.belongsTo(User, {
-    foreignKey: 'user_id'
-});
-
-Favorite.belongsTo(Job, {
-    foreignKey: 'job_id'
-});
-
-module.exports = {User, Job, Favorite};
+module.exports = {User, Job, PageView};
