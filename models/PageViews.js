@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Favorite extends Model {}
+class PageView extends Model {}
 
-Favorite.init(
+PageView.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,7 +11,7 @@ Favorite.init(
             autoIncrement: true
         },
         user_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allownull: false,
             references: {
                 model: 'user',
@@ -32,11 +32,11 @@ Favorite.init(
     },
     {
       sequelize,
-      timestamps: false,
+      timestamps: true,
       freezeTableName: true,
       underscored: true,
-      modelName: 'favorite'
+      modelName: 'PageView'
     }
 )
 
-module.exports = Favorite;
+module.exports = PageView;

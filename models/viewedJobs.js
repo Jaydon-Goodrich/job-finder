@@ -7,7 +7,7 @@ class viewedJobs extends Model {
 
 }
 
-viewedJobs(
+viewedJobs.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -26,7 +26,16 @@ viewedJobs(
             validate: {
                 isUrl: true
             }
+        },
+        location: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+        company_name: {
+            type: DataTypes.STRING,
+            allowNull: true,
         }
+
     },
     {
         sequelize,
