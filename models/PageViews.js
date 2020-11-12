@@ -1,7 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const clickedJobs = require('../controllers/jobs-routes')
 
 class PageView extends Model {}
+
+
 
 PageView.init(
     {
