@@ -1,5 +1,5 @@
-const { sequelize } = require("./User");
-
+const sequelize = require("./User");
+const sequelize = require('../controllers/api/job-routes');
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
