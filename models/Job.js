@@ -18,7 +18,7 @@ Job.init(
             allowNull: false,
         },
         job_url: {
-            type: DataTypes.BLOB,
+            type: DataTypes.TEXT,
             allowNull: false,
             validate: {
                 isUrl: true

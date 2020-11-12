@@ -12,7 +12,8 @@ PageView.init(
         },
         user_id: {
             type: DataTypes.INTEGER,
-            allownull: false,
+            allowNull: false,
+            unique: false,
             references: {
                 model: 'user',
                 key: 'id'
@@ -21,13 +22,20 @@ PageView.init(
         },
         job_id: {
             type: DataTypes.INTEGER,
-            allownull: false,
+            allowNull: false,
+            unique: false,
             references: {
                 model: 'job',
                 key: 'id'
             }
 
+        },
+        counter: {
+            type: DataTypes.INTEGER
         }
+        // time: {
+            
+        // }
 
     },
     {
@@ -35,7 +43,7 @@ PageView.init(
       timestamps: true,
       freezeTableName: true,
       underscored: true,
-      modelName: 'PageView'
+      modelName: 'pageview'
     }
 )
 
