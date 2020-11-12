@@ -14,17 +14,26 @@ Job.init(
             autoIncrement: true,
         },
         job_name: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         job_url: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false,
-            unique: true,
             validate: {
                 isUrl: true
             }
+        },
+        location: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+        company_name: {
+            type: DataTypes.STRING,
+            allowNull: true,
         }
+
+
     },
     {
         sequelize,
