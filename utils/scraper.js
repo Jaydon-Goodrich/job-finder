@@ -17,7 +17,7 @@ const printJobs = (arr) => {
 
 //Function for scraping the jobs based on location and jobType, we can add more parameters if needed
 async function getJobs(location, jobType) {
-    
+    jobsArray = [];
     //creates a new scraper object
     const scraper = new LinkedinScraper({
         //Not sure what this crap is but we need it
@@ -71,7 +71,7 @@ async function getJobs(location, jobType) {
             query: jobType,
             options: {
                 //We can change the limit to how ever many we need
-                limit: 10,
+                limit: 5,
                 locations: [location],
                 descriptionFn: descriptionFn,
                 filters: {
