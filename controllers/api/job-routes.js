@@ -2,7 +2,7 @@ const router = require('express').Router();
 const withAuth = require('../../utils/auth.js');
 const { User, Job, PageView } = require('../../models')
 
-router.post('/click', (req, res) => {
+router.post('/click', withAuth, (req, res) => {
      Job.findOne({
         where: {
             job_url: req.body.job_url

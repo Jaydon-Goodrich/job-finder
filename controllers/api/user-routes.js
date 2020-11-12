@@ -21,8 +21,8 @@ router.get('/', (req, res) => {
 });
 
 //get /api/users/?
-//router.get('/:id', withAuth, (req, res) => {
-router.get('/:id', (req, res) => {
+router.get('/:id', withAuth, (req, res) => {
+// router.get('/:id', (req, res) => {
     User.findOne({
         attributes: ['id', 'username', 'email'],
         where: {
@@ -50,7 +50,6 @@ router.get('/:id', (req, res) => {
 })
 
 // add new user to db
-//router.post('/', withAuth, (req, res) => {
 router.post('/', (req, res) => {
     //expects {username: string, email: string, password: string}
     User.create({
