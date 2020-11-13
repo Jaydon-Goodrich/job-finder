@@ -18,11 +18,11 @@ Job.init(
             allowNull: false,
         },
         job_url: {
-            type: DataTypes.TEXT,
-            allowNull: false,
-            validate: {
-                isUrl: true
-            }
+            type: DataTypes.STRING(2000),
+            allowNull: false
+            // validate: {
+            //     isUrl: true
+            // }
         },
         location: {
             type: DataTypes.STRING,

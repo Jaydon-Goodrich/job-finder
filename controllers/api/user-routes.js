@@ -21,7 +21,8 @@ router.get('/', (req, res) => {
 });
 
 //get /api/users/?
-router.get('/:id', withAuth, (req, res) => {
+//withauth,
+router.get('/:id', (req, res) => {
 // router.get('/:id', (req, res) => {
     User.findOne({
         attributes: ['id', 'username', 'email'],
