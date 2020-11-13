@@ -17,7 +17,7 @@ async function signupFormHandler(event) {
             }),
             headers: { 'Content-Type': 'application/json' }
         });
-
+console.log("Response:  ", response)
         if (response.ok) {
             console.log('success');
             document.location.replace('/jobs/load');
@@ -42,13 +42,19 @@ async function loginFormHandler(event) {
                 password
             }),
             headers: { 'Content-Type': 'application/json' }
+        }).then(res => res.json())
+        .then(data => {
+            document.location.replace('/api/users/'+ data.id);
         });
-
-        if (response.ok) {
-            document.location.replace('/jobs/load');
-        } else {
-            alert(response.statusText);
-        }
+        // if (response.ok) {
+        //     let data = response.json();
+        //     console.log(data);
+        //     //console.log(data.user.id);
+        //     // document.location.replace('/jobs/load');
+        //     //document.location.replace('/api/users/'+ data)
+        // } else {
+        //     alert(response.statusText);
+        // }
     }
 }
 
