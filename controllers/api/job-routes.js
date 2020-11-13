@@ -1,5 +1,5 @@
 const router = require('express').Router();
-// const withAuth = require('../../utils/auth.js');
+const withAuth = require('../../utils/auth.js');
 const { User, Job, PageView } = require('../../models')
 
 router.post('/click', withAuth, (req, res) => {
