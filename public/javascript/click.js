@@ -19,3 +19,5 @@ async function clickCounter(event) {
         console.log("Counter Update Failure")
     }
 }
+
+.addEventListener
