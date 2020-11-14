@@ -11,11 +11,11 @@ Job.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-            autoIncrement: true,
+            autoIncrement: true
         },
         job_name: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: false
         },
         job_url: {
             type: DataTypes.STRING(2000),
@@ -24,13 +24,13 @@ Job.init(
             //     isUrl: true
             // }
         },
-        location: {
+        place: {
             type: DataTypes.STRING,
-            allowNull: true,
+            allowNull: true
         },
         company_name: {
             type: DataTypes.STRING,
-            allowNull: true,
+            allowNull: true
         }
 
 

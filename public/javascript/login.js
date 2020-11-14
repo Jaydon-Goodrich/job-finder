@@ -42,19 +42,13 @@ async function loginFormHandler(event) {
                 password
             }),
             headers: { 'Content-Type': 'application/json' }
-        }).then(res => res.json())
-            .then((data) => {
-                console.log("Data", data)
-                const response1 = fetch('/api/users/' + data.id, {
-                    method: 'get',
-                    headers: { 'Content-Type': 'application/json' }
-                })
-                    .then(my => my.json())
-                    .then(stuff => {
-                        console.log('arg', stuff)
-                    })
-            })
+        });
 
+        if (response.ok) {
+            document.location.replace('/jobs/load');
+        } else {
+            alert(response.statusText);
+        }
     }
 }
 document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);

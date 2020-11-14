@@ -2,7 +2,7 @@ async function clickCounter(event) {
 
     // job_url = event.target.childNodes[7].href.split(" ");
     job_url = event.target.childNodes[7].href.split(" ");
-    place = event.target.childNodes[5].textContent;;
+    place = event.target.childNodes[5].textContent;
 
     job_name = event.target.childNodes[1].textContent;
     // location = event.target.childNodes[5].textContent;
@@ -27,7 +27,7 @@ async function clickCounter(event) {
                 headers: { 'Content-Type': 'application/json' }
             })
             if(response.ok) {
-                console.log(response.json());
+                console.log('incremented!');
                 window.open(job_url, '_blank');
             }
             else {
