@@ -25,6 +25,8 @@ async function getJobs(location, jobType) {
         slowMo: 50,
         args: [
             "--lang=en-US",
+            '--no-sandbox',
+            '--disable-setuid-sandbox'
         ],
     });
 
