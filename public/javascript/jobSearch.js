@@ -8,7 +8,7 @@ function searchJob(event) {
 
     document.location.replace(`/jobs/new/${jobType}&${location}`);
 
-
+    console.log(searchJob);
 }
 
 

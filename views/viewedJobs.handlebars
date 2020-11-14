@@ -1,0 +1,20 @@
+<div class="search-box">
+    <form class="job-search">
+        <label for="jobType">Job Type:</label>
+        <input type="text" id="jobType" name="jobType" placeholder="Job Type" value="Jobs">
+        <label for="loc">Location</label>
+        <input type="text" id="loc" name="loc" placeholder="Location" value="Utah">
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+<div class="con-card">
+    <h2>Viewed Jobs:</h2>
+    {{#each data}}
+    Hello
+        {{!-- {{> job}}    --}}
+    {{/each}}
+</div>
+
+<script src="/javascript/click.js"></script>
+<script src="/javascript/jobSearch.js"></script>
