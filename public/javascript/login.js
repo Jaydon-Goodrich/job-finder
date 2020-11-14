@@ -43,18 +43,9 @@ async function loginFormHandler(event) {
             }),
             headers: { 'Content-Type': 'application/json' }
         }).then(res => res.json())
-            .then((data) => {
-                console.log("Data", data)
-                const response1 = fetch('/api/users/' + data.id, {
-                    method: 'get',
-                    headers: { 'Content-Type': 'application/json' }
-                })
-                    .then(my => my.json())
-                    .then(stuff => {
-                        console.log('arg', stuff)
-                    })
-            })
-
+        .then(() => {
+            document.location.replace('/api/users/dashboard')
+        })
     }
 }
 document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);

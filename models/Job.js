@@ -24,7 +24,7 @@ Job.init(
             //     isUrl: true
             // }
         },
-        location: {
+        place: {
             type: DataTypes.STRING,
             allowNull: true,
         },

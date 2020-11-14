@@ -1,0 +1,13 @@
+<div class="con-card">
+    {{#each data}}
+    <div class="job-card">
+        <h4 class="card-title">{{this.title}}</h2>
+            <h6 class="card-subtitle mb-2">{{this.company}}</h6>
+            <h6 class="text-muted city-text">{{this.place}}</h6>
+
+            <a href="{{this.link}}" target="_blank" class="card-link">Click Here to Apply</a>
+    </div>
+    {{/each}}
+</div>
+
+<script src="/javascript/jobSearch.js"></script>
