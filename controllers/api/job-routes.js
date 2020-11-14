@@ -2,21 +2,22 @@ const router = require('express').Router();
 const withAuth = require('../../utils/auth.js');
 const { User, Job, PageView } = require('../../models')
 
-router.post('/click', withAuth, (req, res) => {
+router.post('/click', (req, res) => {
 
-    console.log(req.body.job_url);
+    console.log(req.body);  
+    console.log(req.body.job_url[0]);   
     Job.findOne({
         where: {
-            job_url: req.body.job_url
+            job_url: req.body.job_url[0]
         }
     })
         .then(dbJobData => {
             console.log(dbJobData);
             if (!dbJobData) {
                 Job.create({
-                    job_url: req.body.job_url,
+                    job_url: req.body.job_url[0],
                     job_name: req.body.job_name,
-                    location: req.body.location,
+                    place: req.body.place,
                     company_name: req.body.company_name
                 })
                     .then(dbJobData => {
