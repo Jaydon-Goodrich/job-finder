@@ -17,7 +17,7 @@ async function signupFormHandler(event) {
             }),
             headers: { 'Content-Type': 'application/json' }
         });
-console.log("Response:  ", response)
+        console.log("Response:  ", response)
         if (response.ok) {
             console.log('success');
             document.location.replace('/jobs/load');
@@ -43,20 +43,19 @@ async function loginFormHandler(event) {
             }),
             headers: { 'Content-Type': 'application/json' }
         }).then(res => res.json())
-        .then(data => {
-            document.location.replace('/api/users/'+ data.id);
-        });
-        // if (response.ok) {
-        //     let data = response.json();
-        //     console.log(data);
-        //     //console.log(data.user.id);
-        //     // document.location.replace('/jobs/load');
-        //     //document.location.replace('/api/users/'+ data)
-        // } else {
-        //     alert(response.statusText);
-        // }
+            .then((data) => {
+                console.log("Data", data)
+                const response1 = fetch('/api/users/' + data.id, {
+                    method: 'get',
+                    headers: { 'Content-Type': 'application/json' }
+                })
+                    .then(my => my.json())
+                    .then(stuff => {
+                        console.log('arg', stuff)
+                    })
+            })
+
     }
 }
-
 document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
