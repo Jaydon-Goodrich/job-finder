@@ -22,7 +22,7 @@ async function getJobs(location, jobType) {
     const scraper = new LinkedinScraper({
         //Not sure what this crap is but we need it
         headless: true,
-        slowMo: 50,
+        slowMo:600,
         args: [
             "--lang=en-US",
             '--no-sandbox',
