@@ -20,34 +20,34 @@ router.get('/', (req, res) => {
     });
 });
 
-//get /api/users/?
-//withauth,
-router.get('/:id', (req, res) => {
-// router.get('/:id', (req, res) => {
+router.get('/dashboard', withAuth, (req, res) => {
+    // router.get('/:id', (req, res) => {
+    console.log(req.session)
     User.findOne({
         attributes: ['id', 'username', 'email'],
         where: {
-            id: req.params.id
+            id: req.session.user_id
         },
         include: [
             {
                 model: Job,
-                attributes: ['id', 'job_name', 'job_url'],
+                // attributes: ['id', 'job_name', 'job_url'],
                 as: 'JobViews'
             }
         ]
     })
-    .then(dbUserData => {
-        if (!dbUserData) {
-            res.status(404).json({message: 'These are not the droids you are looking for'})
-            return;
-        }
-        res.json(dbUserData);
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    })
+        .then(dbUserData => {
+            if (!dbUserData) {
+                res.status(404).json({ message: 'These are not the droids you are looking for' })
+                return;
+            }
+            console.log(dbUserData.get({ plain: true }).JobViews)
+            res.render('dashboard', { data: dbUserData.get({ plain: true }).JobViews, loggedIn: req.session.loggedIn })
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        })
 })
 
 // add new user to db
