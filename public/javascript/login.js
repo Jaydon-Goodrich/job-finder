@@ -1,5 +1,5 @@
 
-
+// Signs the user up
 async function signupFormHandler(event) {
     event.preventDefault();
 
@@ -17,7 +17,6 @@ async function signupFormHandler(event) {
             }),
             headers: { 'Content-Type': 'application/json' }
         });
-        console.log("Response:  ", response)
         if (response.ok) {
             console.log('success');
             document.location.replace('/jobs/load');
@@ -28,6 +27,7 @@ async function signupFormHandler(event) {
     }
 }
 
+// logs the user in
 async function loginFormHandler(event) {
     event.preventDefault();
 
@@ -51,5 +51,6 @@ async function loginFormHandler(event) {
         }
     }
 }
+
 document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);

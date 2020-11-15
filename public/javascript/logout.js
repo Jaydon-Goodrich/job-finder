@@ -1,4 +1,4 @@
-  
+//logs the user out, and destroys session cookies.
 async function logout() {
     const response = await fetch('/api/users/logout', {
         method: 'post',

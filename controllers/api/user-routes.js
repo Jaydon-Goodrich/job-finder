@@ -2,24 +2,6 @@ const router = require('express').Router();
 const withAuth = require('../../utils/auth.js');
 const { User, Job} = require('../../models');
 
-// get /api/users
-router.get('/', (req, res) => {
-    User.findAll({
-        include: [
-            {
-                model: Job,
-                attributes: ['id', 'job_name', 'job_url'],
-                as: 'JobViews'
-            }
-        ]
-    })
-    .then(dbUserData => res.json(dbUserData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
-});
-
 // add new user to db
 router.post('/', (req, res) => {
     //expects {username: string, email: string, password: string}
@@ -37,12 +19,13 @@ router.post('/', (req, res) => {
         })
     })
     .catch(err => {
-        console.log(err);
         res.status(500).json(err);
     })
 })
 
+// Verifies user autentication, and logs them in.
 router.post('/login', (req, res) => {
+
     User.findOne({
         where: {
             email: req.body.email
@@ -68,6 +51,7 @@ router.post('/login', (req, res) => {
     })
 })
 
+// logs a user out, and destroys their cookies
 router.post('/logout', (req, res) => {
     if(req.session.loggedIn){
         req.session.destroy(() => {
