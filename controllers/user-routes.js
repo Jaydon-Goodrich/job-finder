@@ -34,7 +34,7 @@ router.get('/dashboard', withAuth, (req, res) => {
                 res.status(404).json({ message: 'These are not the droids you are looking for' })
                 return;
             }
-            console.log(dbUserData.get({ plain: true }).JobViews)
+			console.log(dbUserData.get({ plain: true }).JobViews)
             res.render('dashboard', { data: dbUserData.get({ plain: true }).JobViews, loggedIn: req.session.loggedIn })
         })
         .catch(err => {

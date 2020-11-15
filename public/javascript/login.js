@@ -20,7 +20,7 @@ async function signupFormHandler(event) {
         console.log("Response:  ", response)
         if (response.ok) {
             console.log('success');
-            document.location.replace('/jobs/load');
+            document.location.replace('/user/dashboard');
         }
         else {
             alert(response.statusText);
@@ -45,7 +45,7 @@ async function loginFormHandler(event) {
         });
 
         if (response.ok) {
-            document.location.replace('/jobs/load');
+            document.location.replace('/user/dashboard');
         } else {
             alert(response.statusText);
         }
