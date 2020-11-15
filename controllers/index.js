@@ -10,7 +10,7 @@ router.use('/', homeRoutes);
 router.use('/user', userRoutes);
 
 router.use((req, res) => {
-  res.status(404).end();
+    res.redirect('/user/dashboard');
 });
 
 module.exports = router;
