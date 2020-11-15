@@ -1,42 +1,33 @@
 async function clickCounter(event) {
 
-    // job_url = event.target.childNodes[7].href.split(" ");
-    job_url = event.target.childNodes[7].href.split(" ");
-    place = event.target.childNodes[5].textContent;
+    let jobCardEl = event.target;
+    while (jobCardEl.className !== 'job-card') {
+        jobCardEl = jobCardEl.parentNode;
+    }
 
-    job_name = event.target.childNodes[1].textContent;
-    // location = event.target.childNodes[5].textContent;
-    company_name = event.target.childNodes[3].textContent;
-    
+    job_url = jobCardEl.childNodes[7].href;
+    place = jobCardEl.childNodes[5].textContent;
+    job_name = jobCardEl.childNodes[1].textContent;
+    company_name = jobCardEl.childNodes[3].textContent;
 
-    if (event.target.className === 'job-card') {
-    
-        const response = await fetch('/api/jobs/click', {
-                method: 'POST',
-                body: JSON.stringify({
-                    // job_url: event.target.childNodes[7].href.split(" "),
-                    job_url,
-                    job_name,
-                    place,
-                    company_name
-                    // job_url: "Hello",
-                    // job_name: event.target.childNodes[1].textContent,
-                    // location:event.target.childNodes[5].textContent,
-                    // company_name: event.target.childNodes[3].textContent
-                }),
-                headers: { 'Content-Type': 'application/json' }
-            })
-            if(response.ok) {
-                console.log('incremented!');
-                window.open(job_url, '_blank');
-            }
-            else {
-                console.log("Counter Update Failure")
-            }
+    console.log(job_url, place, job_name, company_name);
+
+    const response = await fetch('/api/jobs/click', {
+        method: 'POST',
+        body: JSON.stringify({
+            job_url,
+            job_name,
+            place,
+            company_name
+        }),
+        headers: { 'Content-Type': 'application/json' }
+    })
+
+    if (response.ok) {
+        console.log('incremented!');
+        window.open(job_url, '_blank');
+    }
+    else {
+        console.log("Counter Update Failure")
     }
 };
-
-
-//child nodes
-
-document.querySelector('.con-card').addEventListener('click', clickCounter);
