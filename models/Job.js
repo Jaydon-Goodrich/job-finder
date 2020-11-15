@@ -20,9 +20,6 @@ Job.init(
         job_url: {
             type: DataTypes.STRING(2000),
             allowNull: false
-            // validate: {
-            //     isUrl: true
-            // }
         },
         place: {
             type: DataTypes.STRING,

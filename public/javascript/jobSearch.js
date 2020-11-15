@@ -1,4 +1,4 @@
-
+// pulls up a new search with the parameters in the search bar
 function searchJob(event) {
     event.preventDefault();
 
@@ -7,8 +7,6 @@ function searchJob(event) {
 
 
     document.location.replace(`/jobs/new/${jobType}&${location}`);
-
-    console.log(searchJob);
 }
 
 

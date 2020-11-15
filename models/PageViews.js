@@ -36,10 +36,6 @@ PageView.init(
         counter: {
             type: DataTypes.INTEGER
         }
-        // time: {
-            
-        // }
-
     },
     {
       sequelize,
