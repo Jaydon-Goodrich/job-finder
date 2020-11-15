@@ -1,19 +1,6 @@
 const router = require('express').Router();
 const getJobs = require('../utils/scraper');
 
-
-function renderUserPage(job, location, res) {
-    getJobs(location, job)
-        .then(response => {
-            console.log(response);
-            res.render('jobs', {
-                loggedIn: req.session.loggedIn,
-                data: response
-            })
-        }
-        );
-}
-
 router.get('/', (req, res) => {
 
     getJobs("Utah", "Job")
@@ -25,7 +12,6 @@ router.get('/', (req, res) => {
 
 router.get('/load', (req, res) => {
     res.render('load', { loggedIn: req.session.loggedIn });
-
 });
 
 router.get('/new/:id', (req, res) => {

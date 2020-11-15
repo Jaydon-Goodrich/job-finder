@@ -10,12 +10,12 @@
 
 <div class="con-card">
     {{#each data}}
-        <div id="{{create_id}}" class="job-card">
+        <div id="{{create_id}}" class="job-card" onclick="clickCounter(event)">
         <h4 class="card-title">{{this.job_name}}</h4>
         <h6 class="card-subtitle mb-2">{{this.company_name}}</h6>
         <h6 class="text-muted city-text">{{this.place}}</h6>
 
-        <a href="{{this.job_url}}" target="_blank" class="card-link">Click Here to Apply</a>
+        <a href="{{this.job_url}}" target="_blank" class="card-link">{{this.job_url}}Click Here to Apply</a>
     </div>
 
     {{/each}}

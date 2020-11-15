@@ -1,15 +1,15 @@
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/user/dashboard');
+    }
     res.render('homepage', { loggedIn: req.session.loggedIn });
-    
 });
 
 router.get('/login', (req, res) => {
-    console.log("crap")
     if (req.session.loggedIn) {
-        console.log("session details",req.session)
-        res.redirect('/jobs/load', {loggedIn: req.session.loggedIn});
+        res.redirect('/user/dashboard', {loggedIn: req.session.loggedIn});
         return;
     }
     res.render('login');
